@@ -32,7 +32,7 @@ def fill_product_customerinfo(env):
     cr = env.cr
     openupgrade.logged_query(
         cr, """
-            CREATE TABLE product_customerinfo
+            CREATE TABLE IF NOT EXISTS product_customerinfo
             (LIKE product_supplierinfo INCLUDING ALL)""",
     )
     openupgrade.logged_query(
